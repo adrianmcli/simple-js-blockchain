@@ -44,8 +44,6 @@ const hashBlock = (block: Block): string => {
   return hash.toString()
 }
 
-// TODO - make a function that mines a block, or in other words:
-// takes in a block and an int (the nonce) and returns a new block
 // 5. Make a function that mines a block
 
 const mineBlock = (block: Block, initNonce: number): Block => {
