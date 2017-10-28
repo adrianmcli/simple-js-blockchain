@@ -16,7 +16,16 @@ type Block = {
   nonce: ?number
 }
 
-// TODO - construct a genesis block
+// 2. Construct a genesis block
+
+const genesisBlock: Block = {
+  index: 0,
+  txs: [{ from: "Heaven", to: "Adrian", amount: 20 }],
+  hash: "",
+  prevHash: "000000000000000000000000000000000",
+  nonce: null
+}
+
 // TODO - make a function that takes in a block and a transaction,
 // and returns a new block with the transaction added inside it
 // TODO - make a function that hashes a block (block -> string)
