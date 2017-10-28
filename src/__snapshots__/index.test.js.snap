@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`first test 1`] = `
+exports[`blockAddTx 1`] = `
 Object {
   "hash": "",
   "index": 0,
@@ -20,3 +20,7 @@ Object {
   ],
 }
 `;
+
+exports[`hashBlock should hash a non-genesis block 1`] = `"0c3f2782a3d5cfc2c7a868b2afd858ac304134283f83f1eb7466cd57a107cfaa"`;
+
+exports[`hashBlock should hash the genesisBlock 1`] = `"978bcbca07e6258e085f4d2bfcc8a332fd01c638db96f18ba267893ff95eb91a"`;

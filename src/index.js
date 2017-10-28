@@ -1,4 +1,5 @@
 // @flow
+const SHA256 = require("crypto-js/sha256")
 
 // 1. Define types in Flow
 
@@ -34,11 +35,20 @@ const blockAddTx = (block: Block, tx: Transaction): Block => {
   return newBlock
 }
 
-// TODO - make a function that hashes a block (block -> string)
+// 4. make a function that hashes a block (block -> string)
+
+const hashBlock = (block: Block): string => {
+  const { index, prevHash } = block
+  const blockTxStr = JSON.stringify(block.txs)
+  const hash = SHA256(index + prevHash + blockTxStr)
+  return hash.toString()
+}
+
 // TODO - make a function that mines a block, or in other words:
 // takes in a block and an int (the nonce) and returns a new block
 
 module.exports = {
   genesisBlock,
-  blockAddTx
+  blockAddTx,
+  hashBlock
 }
