@@ -1,4 +1,4 @@
-const { genesisBlock, blockAddTx, hashBlock, mineBlock } = require('./index')
+const { genesisBlock, blockAddTx, hashBlock, mineBlock } = require('./lib')
 
 test('blockAddTx', () => {
   const newTx = { from: "Alice", to: "Bob", amount: 10 }

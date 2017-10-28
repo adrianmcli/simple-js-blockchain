@@ -9,4 +9,4 @@ The original post used Haskell (which I am a fan of), but I am nevertheless most
 1. Clone the repo.
 2. Run `yarn` (or `npm install`) to install dependencies.
 3. Build the project (to strip the types) using `yarn build` or `npm run build`.
-4. Require the library inside the generated `lib/index.js`.
+4. Require the library inside the generated `lib/lib.js`.
