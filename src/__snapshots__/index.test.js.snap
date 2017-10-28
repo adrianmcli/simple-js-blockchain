@@ -24,3 +24,40 @@ Object {
 exports[`hashBlock should hash a non-genesis block 1`] = `"0c3f2782a3d5cfc2c7a868b2afd858ac304134283f83f1eb7466cd57a107cfaa"`;
 
 exports[`hashBlock should hash the genesisBlock 1`] = `"978bcbca07e6258e085f4d2bfcc8a332fd01c638db96f18ba267893ff95eb91a"`;
+
+exports[`mineBlock should mine a non-genesis block 1`] = `
+Object {
+  "hash": "0c3f2782a3d5cfc2c7a868b2afd858ac304134283f83f1eb7466cd57a107cfaa",
+  "index": 0,
+  "nonce": 2,
+  "prevHash": "000000000000000000000000000000000",
+  "txs": Array [
+    Object {
+      "amount": 20,
+      "from": "Heaven",
+      "to": "Adrian",
+    },
+    Object {
+      "amount": 10,
+      "from": "Alice",
+      "to": "Bob",
+    },
+  ],
+}
+`;
+
+exports[`mineBlock should mine the genesisBlock 1`] = `
+Object {
+  "hash": "978bcbca07e6258e085f4d2bfcc8a332fd01c638db96f18ba267893ff95eb91a",
+  "index": 0,
+  "nonce": 57,
+  "prevHash": "000000000000000000000000000000000",
+  "txs": Array [
+    Object {
+      "amount": 20,
+      "from": "Heaven",
+      "to": "Adrian",
+    },
+  ],
+}
+`;

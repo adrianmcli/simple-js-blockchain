@@ -27,7 +27,7 @@ const genesisBlock: Block = {
   nonce: null
 }
 
-// 3. Make a function that takes in a block and a transaction,
+// 3. Make a function that adds a transaction into a block
 
 const blockAddTx = (block: Block, tx: Transaction): Block => {
   const newTxs = [...block.txs, tx]
@@ -35,7 +35,7 @@ const blockAddTx = (block: Block, tx: Transaction): Block => {
   return newBlock
 }
 
-// 4. make a function that hashes a block (block -> string)
+// 4. Make a function that hashes a block (block -> string)
 
 const hashBlock = (block: Block): string => {
   const { index, prevHash } = block
@@ -46,9 +46,26 @@ const hashBlock = (block: Block): string => {
 
 // TODO - make a function that mines a block, or in other words:
 // takes in a block and an int (the nonce) and returns a new block
+// 5. Make a function that mines a block
+
+const mineBlock = (block: Block, initNonce: number): Block => {
+  const blockHash = hashBlock(block)
+  const prevHash = block.prevHash
+  const getProof = (nonce: number): string =>
+    SHA256(blockHash + nonce.toString() + prevHash).toString()
+
+  let proofOfWork = getProof(initNonce)
+  let currentNonce = initNonce
+  while (proofOfWork.charAt(0) !== "0") {
+    currentNonce = currentNonce + 1
+    proofOfWork = getProof(currentNonce)
+  }
+  return Object.assign({}, block, { hash: blockHash, nonce: currentNonce })
+}
 
 module.exports = {
   genesisBlock,
   blockAddTx,
-  hashBlock
+  hashBlock,
+  mineBlock
 }
