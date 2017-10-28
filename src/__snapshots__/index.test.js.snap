@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`first test 1`] = `
+Object {
+  "hash": "",
+  "index": 0,
+  "nonce": null,
+  "prevHash": "000000000000000000000000000000000",
+  "txs": Array [
+    Object {
+      "amount": 20,
+      "from": "Heaven",
+      "to": "Adrian",
+    },
+    Object {
+      "amount": 10,
+      "from": "Alice",
+      "to": "Bob",
+    },
+  ],
+}
+`;

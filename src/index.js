@@ -26,8 +26,19 @@ const genesisBlock: Block = {
   nonce: null
 }
 
-// TODO - make a function that takes in a block and a transaction,
-// and returns a new block with the transaction added inside it
+// 3. Make a function that takes in a block and a transaction,
+
+const blockAddTx = (block: Block, tx: Transaction): Block => {
+  const newTxs = [...block.txs, tx]
+  const newBlock = Object.assign({}, block, { txs: newTxs })
+  return newBlock
+}
+
 // TODO - make a function that hashes a block (block -> string)
 // TODO - make a function that mines a block, or in other words:
 // takes in a block and an int (the nonce) and returns a new block
+
+module.exports = {
+  genesisBlock,
+  blockAddTx
+}
